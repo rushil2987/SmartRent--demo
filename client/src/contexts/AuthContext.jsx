@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import { authAPI, setAccessToken } from '../lib/api';
 
 const AuthContext = createContext();
@@ -95,9 +95,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const clearError = () => {
+  const clearError = useCallback(() => {
     dispatch({ type: 'SET_ERROR', payload: null });
-  };
+  }, []);
 
   const value = {
     ...state,
