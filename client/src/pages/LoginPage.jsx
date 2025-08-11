@@ -56,13 +56,13 @@ const LoginPage = () => {
     >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg animate-slide-up">
+          <div className="bg-red-50 border border-red-200 text-red-700 px-5 py-4 rounded-xl animate-slide-up shadow-soft">
             {error}
           </div>
         )}
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-neutral-700 mb-3">
             Email address
           </label>
           <input
@@ -78,7 +78,7 @@ const LoginPage = () => {
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="password" className="block text-sm font-semibold text-neutral-700 mb-3">
             Password
           </label>
           <div className="relative">
@@ -86,16 +86,16 @@ const LoginPage = () => {
               {...register('password')}
               type={showPassword ? 'text' : 'password'}
               id="password"
-              className="input-field pr-10"
+              className="input-field pr-12"
               placeholder="Enter your password"
             />
             <button
               type="button"
-              className="absolute inset-y-0 right-0 pr-3 flex items-center"
+              className="absolute inset-y-0 right-0 pr-4 flex items-center"
               onClick={() => setShowPassword(!showPassword)}
             >
               <svg
-                className="h-5 w-5 text-gray-400 hover:text-gray-600"
+                className="h-5 w-5 text-neutral-400 hover:text-neutral-600 transition-colors duration-200"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -119,15 +119,15 @@ const LoginPage = () => {
               id="remember-me"
               name="remember-me"
               type="checkbox"
-              className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+              className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded transition-colors duration-200"
             />
-            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
+            <label htmlFor="remember-me" className="ml-3 block text-sm text-neutral-700">
               Remember me
             </label>
           </div>
 
           <div className="text-sm">
-            <a href="#" className="font-medium text-primary-600 hover:text-primary-500 transition-colors duration-200">
+            <a href="#" className="font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-300 hover:underline">
               Forgot your password?
             </a>
           </div>
